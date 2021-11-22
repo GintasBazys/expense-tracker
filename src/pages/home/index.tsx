@@ -3,6 +3,7 @@ import { DUMMY_EXPENSES } from "utils/expenseData";
 
 import NewExpense from "./sections/NewExpense/NewExpense";
 import Expenses from "./sections/Expenses/Expenses";
+import { ExpensesWrapper } from "./elements/ExpensesStyles";
 
 const Landing = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
@@ -21,9 +22,9 @@ const Landing = () => {
   return (
     <div>
       <NewExpense handleExpenses={handleExpenses} />
-      <div className="expenses">
+      <ExpensesWrapper>
         <Expenses expenses={expenses} />
-      </div>
+      </ExpensesWrapper>
     </div>
   );
 };

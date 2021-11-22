@@ -1,3 +1,4 @@
+import { ChartWrapper } from "pages/home/elements/ChartStyles";
 import React from "react";
 import ChartBar from "./ChatBar";
 
@@ -14,7 +15,7 @@ const Chart: React.FC<Props> = ({ dataPoints }) => {
   const totalMax = Math.max(...dataPointValues);
 
   return (
-    <div className="chart">
+    <ChartWrapper>
       {dataPoints.map((dataPoint) => (
         <ChartBar
           key={dataPoint.label}
@@ -23,7 +24,7 @@ const Chart: React.FC<Props> = ({ dataPoints }) => {
           label={dataPoint.label}
         />
       ))}
-    </div>
+    </ChartWrapper>
   );
 };
 

@@ -1,3 +1,9 @@
+import {
+  ChartBarInner,
+  ChartBarLabel,
+  ChartBarWraperFill,
+  ChartBarWrapper,
+} from "pages/home/elements/ChartBarStyles";
 import React from "react";
 
 interface Props {
@@ -13,15 +19,14 @@ const ChartBar: React.FC<Props> = ({ value, maxValue, label }) => {
   }
 
   return (
-    <div className="chart-bar">
-      <div className="chart-bar__inner">
-        <div
-          className="chart-bar__fill"
+    <ChartBarWrapper>
+      <ChartBarInner>
+        <ChartBarWraperFill
           style={{ height: barFillHeight }}
-        ></div>
-      </div>
-      <div className="chart-bar__label">{label}</div>
-    </div>
+        ></ChartBarWraperFill>
+      </ChartBarInner>
+      <ChartBarLabel>{label}</ChartBarLabel>
+    </ChartBarWrapper>
   );
 };
 
